@@ -1,27 +1,23 @@
-import React from 'react';
+import React, { Component } from 'react'
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import List from '@material-ui/core/List';
-import Typography from '@material-ui/core/Typography';
-import Divider from '@material-ui/core/Divider';
-import IconButton from '@material-ui/core/IconButton';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import deepPurple from '@material-ui/core/colors/deepPurple';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems } from './listItems';
-import SimpleTable from './SimpleTable';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import styles from './styles'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import IconButton from '@material-ui/core/IconButton'
+import AccountCircle from '@material-ui/icons/AccountCircle'
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import MenuIcon from '@material-ui/icons/Menu'
+import Typography from '@material-ui/core/Typography'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
+import Drawer from '@material-ui/core/Drawer'
+import Divider from '@material-ui/core/Divider'
+import List from '@material-ui/core/List'
+import {mainListItems} from './listItems'
+import styles from '../styles'
 
-class Dashboard extends React.Component {
+class AdminNavigation extends Component {
   state = {
     open: true,
     anchorEl: null,
@@ -35,10 +31,6 @@ class Dashboard extends React.Component {
     this.setState({ open: false });
   };
 
-  handleChange = event => {
-    this.setState({ auth: event.target.checked });
-  };
-
   handleMenu = event => {
     this.setState({ anchorEl: event.currentTarget });
   };
@@ -48,13 +40,12 @@ class Dashboard extends React.Component {
   };
 
   render() {
-    const { anchorEl } = this.state;
-    const { classes } = this.props;
-    const open = Boolean(anchorEl);
+    const { anchorEl } = this.state
+    const { classes } = this.props
+    const open = Boolean(anchorEl)
 
     return (
       <div className={classes.root}>
-        <CssBaseline />
         <AppBar
           position="absolute"
           color="primary"
@@ -123,22 +114,13 @@ class Dashboard extends React.Component {
           <List>{mainListItems}</List>
           <Divider />
         </Drawer>
-        <main className={classes.content}>
-          <div className={classes.appBarSpacer} />
-          <Typography variant="h4" gutterBottom component="h2">
-            Laboratories
-          </Typography>
-          <div className={classes.tableContainer}>
-            <SimpleTable />
-          </div>
-        </main>
       </div>
-    );
+    )
   }
 }
 
-Dashboard.propTypes = {
+AdminNavigation.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Dashboard);
+export default withStyles(styles)(AdminNavigation);
