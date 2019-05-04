@@ -1,6 +1,8 @@
 import React from 'react'
-import { BrowserRouter, Route } from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Admin from '../components/Admin'
+// import AdminLabAdd from '../components/Admin/AdminLabAdd'
+// import AdminLabProfile from '../components/Admin/AdminLabProfile'
 // import Header from './Header';
 // import LabMap from './LabMap';
 // import Signin from './Auth/Signin';
@@ -13,7 +15,9 @@ import Admin from '../components/Admin'
 export default () => (
   <BrowserRouter>
     <div className="app">
-      <Route path="/admin" exact component={Admin} />
+      <Switch>
+        <Route path="/admin/*" component={Admin} />
+      </Switch>
     </div>
   </BrowserRouter>
 )
