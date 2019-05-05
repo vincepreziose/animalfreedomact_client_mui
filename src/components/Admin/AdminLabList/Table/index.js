@@ -163,20 +163,22 @@ let EnhancedTableToolbar = props => {
       </div>
       <div className={classes.spacer} />
       <div className={classes.actions}>
-        {numSelected > 0 ? (
-          <span>
-            <Tooltip title="Edit">
-            <IconButton aria-label="Edit">
-              <EditIcon />
-            </IconButton>
-          </Tooltip>
-            <Tooltip title="Delete">
+        {numSelected > 0 ? [
+          (
+            numSelected < 2
+              ? <Tooltip title="Edit">
+                  <IconButton aria-label="Edit">
+                    <EditIcon />
+                  </IconButton>
+                </Tooltip>
+              : null
+          ),
+          <Tooltip title="Delete">
             <IconButton aria-label="Delete">
               <DeleteIcon />
             </IconButton>
           </Tooltip>
-          </span>
-        ) : (
+        ] : (
           <Tooltip title="Filter list">
             <IconButton aria-label="Filter list">
               <FilterListIcon />
