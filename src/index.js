@@ -10,6 +10,7 @@ import reducers from './reducers'
 import theme from './utils/theme'
 import './assets/scss/main.scss'
 import * as serviceWorker from './serviceWorker'
+require('dotenv').config()
 
 const store = createStore(
   reducers,

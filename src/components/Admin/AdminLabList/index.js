@@ -7,7 +7,7 @@ import styles from '../styles'
 
 class AdminLabList extends Component {
   render() {
-    const { classes } = this.props
+    const { classes, labs } = this.props
 
     return (
       <div>
