@@ -2,6 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import Avatar from '@material-ui/core/Avatar'
+import Grid from '@material-ui/core/Grid'
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -19,6 +21,8 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import EditIcon from '@material-ui/icons/Edit';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
+import beagle from '../../../../assets/img/beagle.png'
+
 
 let counter = 0;
 function createData(name, calories, fat, carbs) {
@@ -139,6 +143,9 @@ const toolbarStyles = theme => ({
   title: {
     flex: '0 0 auto',
   },
+  titleImage: {
+    width: 50,
+  }
 });
 
 let EnhancedTableToolbar = props => {
@@ -156,9 +163,9 @@ let EnhancedTableToolbar = props => {
             {numSelected} selected
           </Typography>
         ) : (
-          <Typography variant="h6" id="tableTitle">
-            Nutrition
-          </Typography>
+          <Grid container justify="center" alignItems="center">
+            <Avatar className={classes.titleImage} alt="Cool Beagle" src={beagle} />
+          </Grid>
         )}
       </div>
       <div className={classes.spacer} />
