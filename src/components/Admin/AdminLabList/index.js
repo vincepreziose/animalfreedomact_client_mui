@@ -15,7 +15,7 @@ class AdminLabList extends Component {
           Laboratories
         </Typography>
         <div className={classes.tableContainer}>
-          <Table />
+          <Table labs={labs} />
         </div>
       </div>
     )
