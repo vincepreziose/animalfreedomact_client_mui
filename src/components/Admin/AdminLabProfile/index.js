@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import AdminNavigation from '../AdminNavigation'
 import styles from '../styles'
 import Typography from '@material-ui/core/Typography'
-import Table from '../AdminLabList/Table'
 
 class AdminLabProfile extends Component {
   render() {
-    const { classes } = this.props
+    const { classes, labs } = this.props
+
+    console.log('Lab Profile: ', labs)
 
     return (
       <div>
