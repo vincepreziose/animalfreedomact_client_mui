@@ -22,6 +22,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import FilterListIcon from '@material-ui/icons/FilterList';
 import { lighten } from '@material-ui/core/styles/colorManipulator';
 import beagle from '../../../../assets/img/beagle.png'
+import TvIcon from '@material-ui/icons/Tv'
 
 function desc(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -165,11 +166,18 @@ let EnhancedTableToolbar = props => {
         {numSelected > 0 ? [
           (
             numSelected < 2
-              ? <Tooltip title="Edit">
+              ? [
+                <Tooltip title="View">
+                  <IconButton aria-label="View">
+                    <TvIcon />
+                  </IconButton>
+                </Tooltip>,
+                <Tooltip title="Edit">
                   <IconButton aria-label="Edit">
                     <EditIcon />
                   </IconButton>
                 </Tooltip>
+              ]
               : null
           ),
           <Tooltip title="Delete">
